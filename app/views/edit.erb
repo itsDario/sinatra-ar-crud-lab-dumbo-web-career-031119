@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PATCH</title>
+</head>
+
+<body>
+    <h1>Hello world</h1>
+    <a href="/">Home</a>
+    <form action="/articles/<%= @article.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="PATCH">
+        <input type="text" name='article[title]' value="">
+        <input type="text" name='article[content]'>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+<a href="/articles/new">New article page</a>
+
+<h1>All articles</h1>
+
+<% @all_articles.each do |article| %>
+<h2> <a href="/articles/<%= article.id.to_i %>"><%= article.title %> </a> </h2>
+<h2> <%= article.content %> </h2>
+<% end %>
