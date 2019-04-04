@@ -1,14 +1,14 @@
 <h1>Hello</h1>
 <a href="/">Home</a>
 <br>
-<a href="/articles/<%= @this_article.id %>/edit">Edit</a>
+<a href="/articles/<%= @article.id %>/edit">Edit</a>
 <br>
-<form action="/articles/<%= @this_article.id %>" method="post">
+<form action="/articles/<%= @article.id %>" method="post">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
     <button type="submit" name="Submit">Delete</button>
 </form>
 <br>
-<%= @this_article.title %>
+<%= @article.title %>
 <br>
-<%= @this_article.content %>
+<%= @article.content %>
 <!-- #delete button -->

@@ -6,12 +6,13 @@
 </head>
 
 <body>
-    <h1>Hello world</h1>
+    <h1>Editing <%= @article.title %></h1>
     <a href="/">Home</a>
+
     <form action="/articles/<%= @article.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="PATCH">
-        <input type="text" name='article[title]' value="">
-        <input type="text" name='article[content]'>
+        <input id='title' type="text" name='article[title]' value="<%= @article.title %>">
+        <input id='content' type="text" name='article[content]' value="<%= @article.content %>">
         <button type="submit">Submit</button>
     </form>
 

@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
     article_content = params[:content]
     @article = Article.create(title: article_title, content: article_content)
     # binding.pry
-    redirect '/articles/#{@new_artsist}' + @article.id.to_s
+    redirect '/articles/' + @article.id.to_s
   end
 
   get '/' do                     #REDIRECT TO INDEX
@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
 
   get '/articles/:id' do          #READ AND SHOW AN ARTICLE
     # binding.pry
-    @this_article = Article.find(params[:id])
+    @article = Article.find(params[:id])
     erb :show
   end
 
@@ -41,7 +41,7 @@ class ApplicationController < Sinatra::Base
 
   get '/articles/:id/edit' do     #EDIT FORM FOR AND ARTICLE
     @article = Article.find(params[:id])
-    # binding.pryk
+    # binding.pry
     erb :edit
   end
 
@@ -50,8 +50,8 @@ class ApplicationController < Sinatra::Base
     # binding.pry
     @article.update(params[:article])#   next param then update
     # binding.pry
-    # redirect '/articles/#{params[:id].to_i}'# redirect
-    redirect to '/articles/' + params[:id].to_s# redirect    
+    redirect '/articles/' + @article.id.to_s
+    # redirect to '/articles/' + params[:id].to_s# redirect    
   end
 
   delete '/articles/:id' do       #APPLY AND REDIRECT EDITS TO AN ARTICLE
